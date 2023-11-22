@@ -36,3 +36,5 @@ export interface WalletContextI {
   children: JSX.Element
   config: any
 }
+
+export type MarketPlaceTimeFilter = "all" | "live" | "upcoming"
