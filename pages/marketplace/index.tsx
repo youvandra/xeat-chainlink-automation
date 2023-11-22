@@ -1,11 +1,10 @@
-import { DownOutlined, InfoCircleOutlined, SearchOutlined, UserOutlined } from "@ant-design/icons"
-import { Button, Dropdown, Input, MenuProps, Space, Tooltip } from "antd"
+import { DownOutlined } from "@ant-design/icons"
+import { Button, Dropdown, MenuProps, Space } from "antd"
 import { MenuItemType } from "antd/es/menu/hooks/useItems"
-import HomeIcon from "components/icons/home"
+import { useState } from "react"
 import SearchIcon from "components/icons/search"
 import MarketPlaceCard from "components/marketplace-card"
 import MainLayout from "pages/layout"
-import { useState } from "react"
 import { MarketPlaceTimeFilter } from "utils/interface_type"
 
 function MarketPlacePage() {
@@ -39,7 +38,7 @@ function MarketPlacePage() {
     <MainLayout>
       <div className="flex h-screen flex-col bg-gradient-to-r from-xeat-black to-xeat-dark-blue">
         <section className="flex w-full items-center justify-between gap-5 p-10">
-          <h2 className="text-2xl font-semibold">Marketplace</h2>
+          <h2 className="text-2xl font-semibold uppercase">Marketplace</h2>
           <div className="flex gap-5">
             <div className="rounded-xl bg-xeat-dark-grey px-7 py-1">0x34...8f8a</div>
             <div className="rounded-xl bg-xeat-light-blue px-7 py-1">50 ETH</div>

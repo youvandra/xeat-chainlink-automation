@@ -1,6 +1,6 @@
+import { CloseOutlined } from "@ant-design/icons"
 import Image from "next/image"
 import XeatTextLogoIcon from "components/icons/xeat-text-logo"
-import { CloseOutlined } from "@ant-design/icons"
 
 function LoginPage() {
   return (
