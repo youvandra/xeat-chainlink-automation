@@ -38,3 +38,5 @@ export interface WalletContextI {
 }
 
 export type MarketPlaceTimeFilter = "all" | "live" | "upcoming"
+
+export type EventFilter = MarketPlaceTimeFilter | "featured" | "ended"

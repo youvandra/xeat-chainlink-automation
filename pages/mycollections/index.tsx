@@ -10,7 +10,7 @@ function MyCollectionsPage() {
           <h2 className="text-2xl font-semibold uppercase">NFT Collections</h2>
           <div className="flex gap-5">
             <div className="rounded-xl bg-xeat-dark-grey px-7 py-1">0x34...8f8a</div>
-            <div className="rounded-xl bg-xeat-light-blue px-7 py-1">50 ETH</div>
+            <div className="bg-xeat-teal rounded-xl px-7 py-1">50 ETH</div>
           </div>
         </section>
         <section className="flex flex-col gap-5 px-10">
