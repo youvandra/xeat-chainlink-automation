@@ -11,7 +11,7 @@ function SideBar() {
   const path = usePathname()
 
   return (
-    <nav className="bg-xeat-dark-blue fixed flex h-screen basis-[10%] flex-col items-center justify-between gap-12 p-5 pr-0 text-white">
+    <nav className="fixed flex h-screen basis-[10%] flex-col items-center justify-between gap-12 bg-xeat-dark-blue p-5 pr-0 text-white">
       <div className="flex w-full flex-col items-center gap-12">
         <Link href={"/"} className="w-full pr-5">
           <XeatLogoIcon className="w-full fill-white" />
@@ -42,7 +42,7 @@ function SideBar() {
       </div>
 
       <Link href={"/"} className={`flex justify-center rounded-l-xl py-4 pr-5`}>
-        <HelpCircleIcon className={`stroke-xeat-grey h-7 w-7`} />
+        <HelpCircleIcon className={`h-7 w-7 stroke-xeat-grey`} />
       </Link>
     </nav>
   )
