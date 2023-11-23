@@ -42,7 +42,7 @@ function EventsPage() {
           <h2 className="text-2xl font-semibold uppercase">Events</h2>
           <div className="flex gap-5">
             <div className="rounded-xl bg-xeat-dark-grey px-7 py-1">0x34...8f8a</div>
-            <div className="bg-xeat-teal rounded-xl px-7 py-1">50 ETH</div>
+            <div className="rounded-xl bg-xeat-teal px-7 py-1">50 ETH</div>
           </div>
         </section>
         <section className="px-10">
@@ -98,7 +98,7 @@ function EventsPage() {
         </section>
         <section className="grid grid-cols-5 gap-4 p-10">
           {[...Array(10)].map((item, index) => {
-            return <EventCard key={index} filter="live" />
+            return <EventCard key={index} href={`/events/${index}`} filter="live" />
           })}
         </section>
       </div>

@@ -1,13 +1,15 @@
 import { RightOutlined } from "@ant-design/icons"
+import Link from "next/link"
 import { HTMLAttributes } from "react"
 import FilterChip from "components/filter-chip"
 import { EventFilter } from "utils/interface_type"
 
 interface IEventCard extends HTMLAttributes<HTMLDivElement> {
   filter: EventFilter
+  href: string
 }
 
-function EventCard({ filter, ...props }: IEventCard) {
+function EventCard({ filter, href, ...props }: IEventCard) {
   return (
     <div {...props} className="flex flex-col gap-3 overflow-hidden rounded-xl bg-xeat-dark-blue">
       <div className="aspect-[4/3] w-full bg-xeat-dark-grey"></div>
@@ -37,10 +39,13 @@ function EventCard({ filter, ...props }: IEventCard) {
         </div>
       </div>
       <div className="flex whitespace-nowrap text-sm">
-        <div className="bg-xeat-teal basis-[40%] p-3 text-center font-bold">0.2 ETH</div>
-        <div className="flex basis-[60%] cursor-pointer items-center justify-center gap-1 bg-xeat-light-blue p-3 text-xs">
+        <div className="basis-[40%] bg-xeat-teal p-3 text-center font-bold">0.2 ETH</div>
+        <Link
+          href={href}
+          className="flex basis-[60%] cursor-pointer items-center justify-center gap-1 bg-xeat-light-blue p-3 text-xs"
+        >
           <span>SEE DETAILS</span> <RightOutlined />
-        </div>
+        </Link>
       </div>
     </div>
   )
