@@ -1,3 +1,5 @@
+"use client"
+
 import { BellOutlined, HeartOutlined, LeftOutlined } from "@ant-design/icons"
 import { Collapse, Modal } from "antd"
 import Link from "next/link"
