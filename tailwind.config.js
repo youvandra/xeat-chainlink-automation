@@ -6,6 +6,7 @@ const defaultTheme = require("tailwindcss/defaultTheme")
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
+  important: true,
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -28,6 +29,15 @@ module.exports = {
           700: "#1d4ed8",
           800: "#1e40af",
           900: "#1e3a8a",
+        },
+        xeat: {
+          black: "#080D0E",
+          grey: "#707475",
+          green: "#21424B",
+          "dark-grey": "#152226",
+          "dark-blue": "#0E1516",
+          "light-blue": "#25BCCC",
+          teal: "#257D86",
         },
       },
       fontFamily: {
@@ -69,6 +79,7 @@ module.exports = {
       borderWidth: {
         DEFAULT: "1px",
         0: "0",
+        1.5: "1.5px",
         2: "2px",
         3: "3px",
         4: "4px",
