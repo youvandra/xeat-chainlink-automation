@@ -4,8 +4,8 @@ import XeatTextLogoIcon from "components/icons/xeat-text-logo"
 
 function LoginPage() {
   return (
-    <main className="flex items-center justify-center bg-black">
-      <div className="my-10 flex w-2/3 overflow-hidden rounded-2xl bg-black">
+    <main className="flex min-h-screen items-center justify-center bg-black">
+      <div className="my-10 flex flex-col-reverse overflow-hidden rounded-2xl bg-black px-5 md:w-2/3 md:flex-row">
         <section className="flex basis-1/2 flex-col items-center justify-center gap-2 bg-gradient-to-r from-xeat-black to-xeat-dark-blue p-5">
           <button className="flex w-full items-center justify-center gap-2 rounded-lg bg-xeat-dark-grey p-4">
             Connect
@@ -19,7 +19,7 @@ function LoginPage() {
         <section className="flex basis-1/2 flex-col items-center justify-between gap-2 bg-xeat-black p-5">
           <div>
             <div className="mb-10 flex justify-end">
-              <button className="translate-x-5">
+              <button className="md:translate-x-5">
                 <CloseOutlined className="rounded-full bg-xeat-dark-grey p-2 text-xeat-light-blue" />
               </button>
             </div>

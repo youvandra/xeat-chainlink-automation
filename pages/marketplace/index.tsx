@@ -37,23 +37,23 @@ function MarketPlacePage() {
   return (
     <MainLayout>
       <div className="flex h-screen flex-col bg-gradient-to-r from-xeat-black to-xeat-dark-blue">
-        <section className="flex w-full items-center justify-between gap-5 p-10">
+        <section className="flex w-full flex-wrap items-center justify-between gap-5 p-5 md:p-10">
           <h2 className="text-2xl font-semibold uppercase">Marketplace</h2>
           <div className="flex gap-5">
             <div className="rounded-xl bg-xeat-dark-grey px-7 py-1">0x34...8f8a</div>
             <div className="rounded-xl bg-xeat-teal px-7 py-1">50 ETH</div>
           </div>
         </section>
-        <section className="px-10">
+        <section className="px-5 md:px-10">
           <div className="flex items-center justify-between border-b-1.5 border-xeat-dark-grey py-5">
-            <div className="flex w-full gap-5">
-              <div className="flex basis-[70%] gap-2">
+            <div className="flex w-full flex-wrap gap-5">
+              <div className="flex flex-wrap gap-2 md:basis-[70%]">
                 {Array<MarketPlaceTimeFilter>("all", "live", "upcoming").map((item, index) => {
                   return (
                     <button
                       onClick={() => setCurrenTimeFilter(item)}
                       key={index}
-                      className={`w-1/5 rounded-lg py-1 text-center capitalize ${
+                      className={`w-full rounded-lg py-1 text-center capitalize md:w-1/5 ${
                         item === currentTimeFilter && "bg-xeat-dark-grey "
                       }`}
                     >
@@ -62,7 +62,7 @@ function MarketPlacePage() {
                   )
                 })}
 
-                <div className="ml-5 flex w-2/5 grow items-center gap-0 overflow-hidden rounded-full border-1.5 border-xeat-dark-grey pl-4 pr-2">
+                <div className="flex w-full grow items-center gap-0 overflow-hidden rounded-full border-1.5 border-xeat-dark-grey pl-4 pr-2 md:ml-5 md:w-2/5">
                   <SearchIcon className="h-5 w-5 fill-white" />
                   <input
                     type="text"
@@ -71,7 +71,7 @@ function MarketPlacePage() {
                   />
                 </div>
               </div>
-              <div className="flex basis-[30%] items-center justify-end">
+              <div className="flex items-center justify-end md:basis-[30%]">
                 <Dropdown menu={menuProps}>
                   <Button className="group h-full border-1.5 border-xeat-dark-grey bg-xeat-dark-blue text-white transition-all duration-150 hover:border-white ">
                     <Space>
@@ -84,7 +84,7 @@ function MarketPlacePage() {
             </div>
           </div>
         </section>
-        <section className="grid grid-cols-5 gap-4 p-10">
+        <section className="grid grid-cols-1 gap-4 p-5 sm:grid-cols-2 md:grid-cols-3 md:p-10 lg:grid-cols-5">
           {[...Array(10)].map((item, index) => {
             return <MarketPlaceCard key={index} />
           })}

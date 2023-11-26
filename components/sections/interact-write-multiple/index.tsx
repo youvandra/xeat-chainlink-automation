@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Button } from "antd"
 import { useEffect, useState } from "react"
 import { UseContractWriteConfig, usePrepareContractWrite } from "wagmi"

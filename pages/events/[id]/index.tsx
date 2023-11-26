@@ -1,9 +1,8 @@
 "use client"
 
 import { BellOutlined, HeartOutlined, LeftOutlined } from "@ant-design/icons"
-import { Collapse, Modal } from "antd"
+import { Collapse } from "antd"
 import Link from "next/link"
-import { useState } from "react"
 import GithubIcon from "components/icons/github"
 import InternetIcon from "components/icons/internet"
 import TelegramIcon from "components/icons/telegram"
@@ -12,21 +11,17 @@ import MainLayout from "pages/layout"
 import EventDetailModal from "./modal"
 
 function EventDetailPage() {
-  const [modalOpen, setModalOpen] = useState<boolean>(false)
-
   return (
     <MainLayout>
-      {modalOpen && <div className="">asd</div>}
-
       <div className="flex flex-col bg-gradient-to-r from-xeat-black to-xeat-dark-blue">
-        <section className="flex w-full items-center justify-between gap-5 p-10">
+        <section className="flex w-full flex-wrap items-center justify-between gap-5 p-5 md:p-10">
           <h2 className="text-2xl font-semibold uppercase">Events</h2>
           <div className="flex gap-5">
             <div className="rounded-xl bg-xeat-dark-grey px-7 py-1">0x34...8f8a</div>
             <div className="rounded-xl bg-xeat-teal px-7 py-1">50 ETH</div>
           </div>
         </section>
-        <div className="w-full px-10">
+        <div className="w-full px-5 md:px-10">
           <Link
             href={"/events"}
             className="flex w-fit items-center gap-2 rounded-md bg-xeat-dark-grey px-5 py-2 text-xeat-light-blue"
@@ -35,9 +30,9 @@ function EventDetailPage() {
             Back
           </Link>
         </div>
-        <section className="flex gap-10 px-10 py-5">
+        <section className="flex flex-col gap-10 p-5 md:flex-row md:px-10">
           <div className="flex basis-[60%] flex-col gap-5 rounded-2xl bg-xeat-dark-grey p-5">
-            <div className="flex w-full gap-5">
+            <div className="flex w-full flex-col gap-5 md:flex-row">
               <div className="aspect-square basis-[25%] rounded-xl bg-xeat-dark-blue"></div>
               <div className="flex basis-[75%] justify-between gap-3">
                 <div className="flex flex-col gap-2">
@@ -127,7 +122,7 @@ function EventDetailPage() {
           <div className="flex basis-[40%] flex-col gap-5">
             <h2 className="text-xl font-medium">Tickets</h2>
             <div className="flex w-full flex-col gap-10 rounded-2xl border-1.5 border-xeat-dark-grey p-5">
-              <div className="flex gap-5">
+              <div className="flex flex-col gap-5 md:flex-row">
                 <div className="aspect-square h-fit basis-[30%] rounded-xl bg-xeat-dark-grey"></div>
                 <div className="flex basis-[70%] flex-col gap-2">
                   <h1 className="text-lg font-medium">Tribune Wings I (2nd Floor)</h1>

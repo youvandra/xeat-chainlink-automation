@@ -38,27 +38,27 @@ function EventsPage() {
   return (
     <MainLayout>
       <div className="flex h-screen flex-col bg-gradient-to-r from-xeat-black to-xeat-dark-blue">
-        <section className="flex w-full items-center justify-between gap-5 p-10">
+        <section className="flex w-full flex-wrap items-center justify-between gap-5 p-5 md:p-10">
           <h2 className="text-2xl font-semibold uppercase">Events</h2>
           <div className="flex gap-5">
             <div className="rounded-xl bg-xeat-dark-grey px-7 py-1">0x34...8f8a</div>
             <div className="rounded-xl bg-xeat-teal px-7 py-1">50 ETH</div>
           </div>
         </section>
-        <section className="px-10">
-          <div className="flex w-full items-center justify-center gap-20 rounded-xl bg-xeat-dark-grey px-5 py-3 uppercase">
+        <section className="p-5 md:px-10">
+          <div className="flex w-full flex-col items-center justify-center gap-5 rounded-xl bg-xeat-dark-grey px-5 py-3 uppercase md:flex-row md:gap-20">
             <div className="flex flex-col items-center">
               <span className="text-xs">All Events</span>
               <span className="text-xl font-medium">226</span>
             </div>
-            <div className="h-7 w-[1px] bg-xeat-grey"></div>
+            <div className="hidden h-7 w-[1px] bg-xeat-grey md:block"></div>
             <div className="flex flex-col items-center">
               <span className="text-xs">Participants in All</span>
               <span className="text-xl font-medium">17,905</span>
             </div>
           </div>
           <div className="flex items-center justify-between border-b-1.5 border-xeat-dark-grey py-5">
-            <div className="flex w-full gap-5">
+            <div className="flex w-full flex-wrap gap-5 md:flex-nowrap">
               {Array<EventFilter>("all", "live", "upcoming", "featured", "ended").map((item, index) => {
                 return (
                   <button
@@ -73,8 +73,8 @@ function EventsPage() {
                 )
               })}
 
-              <div className="flex basis-[70%] gap-2">
-                <div className="ml-5 flex grow items-center gap-0 overflow-hidden rounded-full border-1.5 border-xeat-dark-grey bg-xeat-black pl-4 pr-2">
+              <div className="flex gap-2 md:basis-[70%]">
+                <div className="flex grow items-center gap-0 overflow-hidden rounded-full border-1.5 border-xeat-dark-grey bg-xeat-black pl-4 pr-2 md:ml-5">
                   <SearchIcon className="h-5 w-5 fill-white" />
                   <input
                     type="text"
@@ -96,7 +96,7 @@ function EventsPage() {
             </div>
           </div>
         </section>
-        <section className="grid grid-cols-5 gap-4 p-10">
+        <section className="grid grid-cols-1 gap-4 p-5 sm:grid-cols-2 md:grid-cols-3 md:p-10 lg:grid-cols-5">
           {[...Array(10)].map((item, index) => {
             return <EventCard key={index} href={`/events/${index}`} filter="live" />
           })}
