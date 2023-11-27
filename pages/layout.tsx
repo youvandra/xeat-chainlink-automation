@@ -11,7 +11,6 @@ export interface IMainLayout {
 
 function MainLayout({ children }: IMainLayout) {
   const { isConnected, address, accountBalance } = useWalletContext()
-  console.log(accountBalance, "account")
   const route = useRouter()
   const pathName = usePathname()
 

@@ -65,13 +65,17 @@ function EventDetailPage() {
   }
 
   const getData = async () => {
-    const { data }: { data: any } = await getEventDetail()
+    console.log("GETTTTT")
+    const { data }: { data: any } = await getEventDetail?.()
+    console.log(data, "data")
     const detail = data?.[2]
     setData(detail)
   }
 
   useEffect(() => {
-    getData()
+    setTimeout(() => {
+      getData()
+    }, 2000)
   }, [])
 
   useEffect(() => {
