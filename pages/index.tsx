@@ -6,10 +6,6 @@ function HomePage() {
   return (
     <MainLayout>
       <div className="flex h-screen basis-[80%] flex-col bg-gradient-to-r from-xeat-black to-xeat-dark-blue">
-        <section className="flex w-full flex-wrap justify-end gap-5 p-5 pb-0 md:p-10">
-          <div className="rounded-xl bg-xeat-dark-grey px-7 py-1">0x34...8f8a</div>
-          <div className="rounded-xl bg-xeat-teal px-7 py-1">50 ETH</div>
-        </section>
         <section className="relative z-0 flex h-full grow flex-col items-center justify-center gap-10 text-center">
           <div className="absolute bottom-0 right-0 -z-10 aspect-[16/12] w-1/2">
             <Image src={"/assets/images/homepage-x-image.png"} alt={"x image"} fill />

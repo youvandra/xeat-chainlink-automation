@@ -6,13 +6,6 @@ function MyCollectionsPage() {
   return (
     <MainLayout>
       <div className="flex h-screen flex-col bg-gradient-to-r from-xeat-black to-xeat-dark-blue">
-        <section className="flex w-full flex-wrap items-center justify-between gap-5 p-5 md:p-10">
-          <h2 className="text-2xl font-semibold uppercase">NFT Collections</h2>
-          <div className="flex gap-5">
-            <div className="rounded-xl bg-xeat-dark-grey px-7 py-1">0x34...8f8a</div>
-            <div className="rounded-xl bg-xeat-teal px-7 py-1">50 ETH</div>
-          </div>
-        </section>
         <section className="flex flex-col gap-5 p-5 md:p-10">
           <div className="flex w-full items-center gap-0 overflow-hidden rounded-full border-1.5 border-xeat-dark-grey pl-4 pr-2 md:w-2/5">
             <SearchIcon className="h-5 w-5 fill-white" />

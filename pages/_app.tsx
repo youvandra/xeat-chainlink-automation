@@ -1,7 +1,7 @@
 import { AppProps } from "next/app"
 
 import { configureChains, createConfig, WagmiConfig } from "wagmi"
-import { bscTestnet, goerli, polygon } from "wagmi/chains"
+import { avalancheFuji, polygonMumbai } from "wagmi/chains"
 import { MetaMaskConnector } from "wagmi/connectors/metaMask"
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect"
 
@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
    * read: https://wagmi.sh/react/providers/configuring-chains
    */
 
-  const { chains, publicClient } = configureChains([polygon, goerli, bscTestnet], [publicProvider()])
+  const { chains, publicClient } = configureChains([polygonMumbai], [publicProvider()])
 
   const config = createConfig({
     autoConnect: true, // this mean that everytime the page has reloaded, the state of the wallet connect status is keep remains

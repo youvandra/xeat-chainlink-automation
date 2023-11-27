@@ -17,3 +17,11 @@ export function CheckConnectedWalletAddress(params: CheckConnectedWalletAddressI
     return
   }
 }
+
+export function truncateText(text: string, maxLength: number): string {
+  if (text.length <= maxLength) {
+    return text
+  } else {
+    return text.substring(0, maxLength) + "..."
+  }
+}

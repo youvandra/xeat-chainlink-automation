@@ -1,14 +1,36 @@
 import { CloseOutlined } from "@ant-design/icons"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
+import { useEffect } from "react"
 import XeatTextLogoIcon from "components/icons/xeat-text-logo"
+import { useWalletContext } from "context/wallet-context"
 
 function LoginPage() {
+  const { connect, connectors, isConnected } = useWalletContext()
+  const metamaskConnector = connectors![0]
+
+  const route = useRouter()
+
+  useEffect(() => {
+    if (isConnected) {
+      route.back()
+    }
+  }, [isConnected])
+
   return (
     <main className="flex min-h-screen items-center justify-center bg-black">
       <div className="my-10 flex flex-col-reverse overflow-hidden rounded-2xl bg-black px-5 md:w-2/3 md:flex-row">
         <section className="flex basis-1/2 flex-col items-center justify-center gap-2 bg-gradient-to-r from-xeat-black to-xeat-dark-blue p-5">
-          <button className="flex w-full items-center justify-center gap-2 rounded-lg bg-xeat-dark-grey p-4">
-            Connect
+          <button
+            onClick={() => {
+              if (metamaskConnector.ready) {
+                connect!({ connector: metamaskConnector })
+                return
+              }
+            }}
+            className="flex w-full items-center justify-center gap-2 rounded-lg bg-xeat-dark-grey p-4"
+          >
+            {isConnected ? "Connected" : "Connect"}
             <div className="relative h-5 w-5">
               <Image src={"/assets/images/metamask-logo.png"} alt="Metamask logo" fill />
             </div>

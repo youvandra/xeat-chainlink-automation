@@ -37,17 +37,10 @@ function MarketPlacePage() {
   return (
     <MainLayout>
       <div className="flex h-screen flex-col bg-gradient-to-r from-xeat-black to-xeat-dark-blue">
-        <section className="flex w-full flex-wrap items-center justify-between gap-5 p-5 md:p-10">
-          <h2 className="text-2xl font-semibold uppercase">Marketplace</h2>
-          <div className="flex gap-5">
-            <div className="rounded-xl bg-xeat-dark-grey px-7 py-1">0x34...8f8a</div>
-            <div className="rounded-xl bg-xeat-teal px-7 py-1">50 ETH</div>
-          </div>
-        </section>
         <section className="px-5 md:px-10">
           <div className="flex items-center justify-between border-b-1.5 border-xeat-dark-grey py-5">
-            <div className="flex w-full flex-wrap gap-5">
-              <div className="flex flex-wrap gap-2 md:basis-[70%]">
+            <div className="flex w-full flex-wrap gap-5  md:justify-between">
+              <div className="flex flex-wrap gap-2  md:basis-[70%]">
                 {Array<MarketPlaceTimeFilter>("all", "live", "upcoming").map((item, index) => {
                   return (
                     <button
@@ -62,7 +55,7 @@ function MarketPlacePage() {
                   )
                 })}
 
-                <div className="flex w-full grow items-center gap-0 overflow-hidden rounded-full border-1.5 border-xeat-dark-grey pl-4 pr-2 md:ml-5 md:w-2/5">
+                <div className="flex w-full grow items-center gap-0 overflow-hidden rounded-full border-1.5 border-xeat-dark-grey pl-4 pr-2 md:ml-5 md:w-1/5">
                   <SearchIcon className="h-5 w-5 fill-white" />
                   <input
                     type="text"
@@ -71,7 +64,7 @@ function MarketPlacePage() {
                   />
                 </div>
               </div>
-              <div className="flex items-center justify-end md:basis-[30%]">
+              <div className="flex items-center justify-end  md:basis-[10%]">
                 <Dropdown menu={menuProps}>
                   <Button className="group h-full border-1.5 border-xeat-dark-grey bg-xeat-dark-blue text-white transition-all duration-150 hover:border-white ">
                     <Space>

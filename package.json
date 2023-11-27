@@ -30,6 +30,7 @@
     "@vercel/otel": "^0.3.0",
     "antd": "^5.11.1",
     "class-variance-authority": "^0.7.0",
+    "dayjs": "^1.11.10",
     "lodash": "^4.17.21",
     "next": "^13.5.5",
     "next-compose-plugins": "^2.2.1",

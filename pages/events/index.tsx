@@ -38,13 +38,6 @@ function EventsPage() {
   return (
     <MainLayout>
       <div className="flex h-screen flex-col bg-gradient-to-r from-xeat-black to-xeat-dark-blue">
-        <section className="flex w-full flex-wrap items-center justify-between gap-5 p-5 md:p-10">
-          <h2 className="text-2xl font-semibold uppercase">Events</h2>
-          <div className="flex gap-5">
-            <div className="rounded-xl bg-xeat-dark-grey px-7 py-1">0x34...8f8a</div>
-            <div className="rounded-xl bg-xeat-teal px-7 py-1">50 ETH</div>
-          </div>
-        </section>
         <section className="p-5 md:px-10">
           <div className="flex w-full flex-col items-center justify-center gap-5 rounded-xl bg-xeat-dark-grey px-5 py-3 uppercase md:flex-row md:gap-20">
             <div className="flex flex-col items-center">
