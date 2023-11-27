@@ -65,11 +65,15 @@ function EventDetailPage() {
   }
 
   const getData = async () => {
-    console.log("GETTTTT")
-    const { data }: { data: any } = await getEventDetail?.()
-    console.log(data, "data")
-    const detail = data?.[2]
-    setData(detail)
+    try {
+      console.log("GETTTTT")
+      const { data }: { data: any } = await getEventDetail?.()
+      console.log(data, "data")
+      const detail = data?.[2]
+      setData(detail)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   useEffect(() => {
