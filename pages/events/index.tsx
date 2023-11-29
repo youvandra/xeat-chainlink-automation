@@ -23,10 +23,16 @@ export interface EventDetails {
   venueImage: string
 }
 
+export interface EventStructureI {
+  details: EventDetails
+  id: number
+  uriId: number
+}
+
 function EventsPage() {
   const [currentTimeFilter, setCurrenTimeFilter] = useState<EventFilter>("all")
 
-  const [allEvent, setAllEvent] = useState<EventDetails[] | []>([])
+  const [allEvent, setAllEvent] = useState<EventStructureI[] | []>([])
 
   const items: MenuProps["items"] = [
     {
@@ -132,7 +138,7 @@ function EventsPage() {
         </section>
         <section className="grid grid-cols-1 gap-4 p-5 sm:grid-cols-2 md:grid-cols-3 md:p-10 lg:grid-cols-5">
           {allEvent?.map((item, index) => {
-            return <EventCard key={index} href={`/events/${index}`} data={item} />
+            return <EventCard key={index} href={`/events/${item.id}`} data={item.details} />
           })}
         </section>
       </div>
