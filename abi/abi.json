@@ -507,6 +507,76 @@
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "getAllEvents",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "eventImage",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "venueImage",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "about",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "terms",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "endDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "maxSupply",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "featured",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "pricePerNFT",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct Xeat.EventDetails[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "uint256",

@@ -1,14 +1,32 @@
 import { DownOutlined } from "@ant-design/icons"
 import { Button, Dropdown, MenuProps, Space } from "antd"
 import { MenuItemType } from "antd/es/menu/hooks/useItems"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useContractRead } from "wagmi"
+import abi from "abi/abi.json"
 import EventCard from "components/event-card"
 import SearchIcon from "components/icons/search"
 import MainLayout from "pages/layout"
 import { EventFilter } from "utils/interface_type"
 
+export interface EventDetails {
+  about: string
+  description: string
+  endDate: number
+  eventImage: string
+  featured: boolean
+  maxSupply: number
+  name: string
+  pricePerNFT: number
+  startDate: number
+  terms: string
+  venueImage: string
+}
+
 function EventsPage() {
   const [currentTimeFilter, setCurrenTimeFilter] = useState<EventFilter>("all")
+
+  const [allEvent, setAllEvent] = useState<EventDetails[] | []>([])
 
   const items: MenuProps["items"] = [
     {
@@ -34,6 +52,29 @@ function EventsPage() {
     items,
     onClick: handleMenuClick,
   }
+
+  const { refetch: getEventDetail } = useContractRead({
+    address: process.env.NEXT_PUBLIC_SMART_CONTRACT as `0x${string}`,
+    abi: abi,
+    functionName: "getAllEvents",
+    // args: [Number(param?.id)],
+  })
+
+  const getData = async () => {
+    try {
+      const { data }: { data: any } = await getEventDetail?.()
+      setAllEvent(data)
+      console.log(data, "data")
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+      getData()
+    }, 1000)
+  }, [])
 
   return (
     <MainLayout>
@@ -90,8 +131,8 @@ function EventsPage() {
           </div>
         </section>
         <section className="grid grid-cols-1 gap-4 p-5 sm:grid-cols-2 md:grid-cols-3 md:p-10 lg:grid-cols-5">
-          {[...Array(10)].map((item, index) => {
-            return <EventCard key={index} href={`/events/${index}`} filter="live" />
+          {allEvent?.map((item, index) => {
+            return <EventCard key={index} href={`/events/${index}`} data={item} />
           })}
         </section>
       </div>

@@ -2,26 +2,39 @@ import { RightOutlined } from "@ant-design/icons"
 import Link from "next/link"
 import { HTMLAttributes } from "react"
 import FilterChip from "components/filter-chip"
+import { EventDetails } from "pages/events"
 import { EventFilter } from "utils/interface_type"
 
 interface IEventCard extends HTMLAttributes<HTMLDivElement> {
-  filter: EventFilter
   href: string
+  data: EventDetails
 }
 
-function EventCard({ filter, href, ...props }: IEventCard) {
+function EventCard({ href, data, ...props }: IEventCard) {
   return (
     <div {...props} className="flex flex-col gap-3 overflow-hidden rounded-xl bg-xeat-dark-blue">
-      <div className="aspect-[4/3] w-full bg-xeat-dark-grey"></div>
+      <div className="aspect-[4/3] w-full overflow-hidden bg-xeat-dark-grey">
+        <img src={data.eventImage} alt="image" className="aspect-[4/3] h-full w-full object-cover" />
+      </div>
       <div className="flex flex-col gap-2 px-3">
         <div className="flex items-center justify-between gap-2">
-          <div className="h-12 w-12 rounded-full bg-xeat-dark-grey"></div>
-          <FilterChip filter={filter} />
+          <div className="h-12 w-12 overflow-hidden rounded-full bg-xeat-dark-grey">
+            <img src={data.venueImage} alt="image" className="h-12 w-12  object-cover" />
+          </div>
+          <FilterChip filter={data.featured ? "featured" : "live"} />
         </div>
         <div className="flex items-center justify-between gap-2">
-          <span className="font-medium">REX</span>
+          <span className="font-medium">{data.name}</span>
           <div className="rounded-full border border-xeat-grey px-8 py-1 text-xs font-bold text-xeat-grey">BSC</div>
         </div>
+
+        {/**
+         * @leo, please add count down to this  html
+         * use data.startDate and data.endDate
+         * the data is in milisecond
+         *
+         * to use this please install metamask extension on your wallet
+         */}
         <span className="text-xs text-xeat-grey">Ending in :</span>
         <div className="flex justify-center text-3xl font-bold">
           <span className="mr-2">08</span>
@@ -39,7 +52,9 @@ function EventCard({ filter, href, ...props }: IEventCard) {
         </div>
       </div>
       <div className="flex whitespace-nowrap text-sm">
-        <div className="basis-[40%] bg-xeat-teal p-3 text-center font-bold">0.2 ETH</div>
+        <div className="basis-[40%] bg-xeat-teal p-3 text-center font-bold">
+          {Number(data?.pricePerNFT) / 10 ** 18} ETH
+        </div>
         <Link
           href={href}
           className="flex basis-[60%] cursor-pointer items-center justify-center gap-1 bg-xeat-light-blue p-3 text-xs"

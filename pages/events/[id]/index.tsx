@@ -35,7 +35,8 @@ function EventDetailPage() {
   const param = useParams()
   const { address } = useWalletContext()
   const [data, setData] = useState<null | EventDetails>(null)
-
+  const [soldTicket, setSoldTicket] = useState<number>(0)
+  console.log(Number(soldTicket))
   const { config } = usePrepareContractWrite({
     address: process.env.NEXT_PUBLIC_SMART_CONTRACT as `0x${string}`,
     abi: abi,
@@ -60,16 +61,24 @@ function EventDetailPage() {
     args: [Number(param?.id)],
   })
 
+  const { refetch: getSoldTicket } = useContractRead({
+    address: process.env.NEXT_PUBLIC_SMART_CONTRACT as `0x${string}`,
+    abi: abi,
+    functionName: "eventTicketsSold",
+    args: [Number(param?.id)],
+  })
+
   const onBuyNFT = () => {
     write?.()
   }
 
   const getData = async () => {
     try {
-      console.log("GETTTTT")
       const { data }: { data: any } = await getEventDetail?.()
-      console.log(data, "data")
       const detail = data?.[2]
+
+      const { data: soldTicket }: { data: any } = await getSoldTicket?.()
+      setSoldTicket(soldTicket)
       setData(detail)
     } catch (error) {
       console.log(error)
@@ -79,7 +88,7 @@ function EventDetailPage() {
   useEffect(() => {
     setTimeout(() => {
       getData()
-    }, 2000)
+    }, 1000)
   }, [])
 
   useEffect(() => {
@@ -185,11 +194,15 @@ function EventDetailPage() {
                   </p>
                   <div className="flex justify-between gap-4">
                     <span className="text-lg font-bold">Entries</span>
-                    <span className="text-lg font-bold text-xeat-light-blue">0/{Number(data?.maxSupply)}</span>
+                    <span className="text-lg font-bold text-xeat-light-blue">
+                      {Number(soldTicket)}/{Number(data?.maxSupply)}
+                    </span>
                   </div>
                   <div className="h-8 rounded-full border-1.5 border-xeat-dark-grey p-1">
                     <div
-                      className={`h-full w-[10%] rounded-full bg-gradient-to-r from-xeat-teal to-xeat-light-blue`}
+                      style={{ width: `${(Number(soldTicket) / Number(data?.maxSupply)) * 100}%` }}
+                      className={`h-full  rounded-full bg-gradient-to-r from-xeat-teal 
+                      to-xeat-light-blue`}
                     ></div>
                   </div>
                 </div>
