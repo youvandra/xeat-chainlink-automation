@@ -1,9 +1,11 @@
+"use client"
+
 import { RightOutlined } from "@ant-design/icons"
 import Link from "next/link"
 import { HTMLAttributes } from "react"
 import FilterChip from "components/filter-chip"
+import { useCountdown } from "hooks/useCountdown"
 import { EventDetails } from "pages/events"
-import { EventFilter } from "utils/interface_type"
 
 interface IEventCard extends HTMLAttributes<HTMLDivElement> {
   href: string
@@ -11,6 +13,8 @@ interface IEventCard extends HTMLAttributes<HTMLDivElement> {
 }
 
 function EventCard({ href, data, ...props }: IEventCard) {
+  const [days, hours, minutes, seconds] = useCountdown(data)
+
   return (
     <div {...props} className="flex flex-col gap-3 overflow-hidden rounded-xl bg-xeat-dark-blue">
       <div className="aspect-[4/3] w-full overflow-hidden bg-xeat-dark-grey">
@@ -35,14 +39,15 @@ function EventCard({ href, data, ...props }: IEventCard) {
          *
          * to use this please install metamask extension on your wallet
          */}
+
         <span className="text-xs text-xeat-grey">Ending in :</span>
         <div className="flex justify-center text-3xl font-bold">
-          <span className="mr-2">08</span>
-          <span>04</span>
+          <span className="mr-2">{days}</span>
+          <span>{hours}</span>
           <span>:</span>
-          <span>30</span>
+          <span>{minutes}</span>
           <span>:</span>
-          <span>20</span>
+          <span>{seconds}</span>
         </div>
         <div className="flex justify-center gap-2 text-xs">
           <span>Days</span>
