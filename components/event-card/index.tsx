@@ -29,7 +29,7 @@ function EventCard({ href, data, ...props }: IEventCard) {
         </div>
         <div className="flex items-center justify-between gap-2">
           <span className="font-medium">{data.name}</span>
-          <div className="rounded-full border border-xeat-grey px-8 py-1 text-xs font-bold text-xeat-grey">BSC</div>
+          <div className="rounded-full border border-xeat-grey px-8 py-1 text-xs font-bold text-xeat-grey">Concert</div>
         </div>
 
         {/**
@@ -40,25 +40,10 @@ function EventCard({ href, data, ...props }: IEventCard) {
          * to use this please install metamask extension on your wallet
          */}
 
-        <span className="text-xs text-xeat-grey">Ending in :</span>
-        <div className="flex justify-center text-3xl font-bold">
-          <span className="mr-2">{days}</span>
-          <span>{hours}</span>
-          <span>:</span>
-          <span>{minutes}</span>
-          <span>:</span>
-          <span>{seconds}</span>
-        </div>
-        <div className="flex justify-center gap-2 text-xs">
-          <span>Days</span>
-          <span>Hours</span>
-          <span>Minutes</span>
-          <span>Seconds</span>
-        </div>
       </div>
       <div className="flex whitespace-nowrap text-sm">
         <div className="basis-[40%] bg-xeat-teal p-3 text-center font-bold">
-          {Number(data?.pricePerNFT) / 10 ** 18} ETH
+          {Number(data?.pricePerNFT) / 10 ** 18} MATIC
         </div>
         <Link
           href={href}

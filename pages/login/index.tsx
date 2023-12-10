@@ -49,7 +49,7 @@ function LoginPage() {
               <XeatTextLogoIcon className="mb-7 w-32 fill-white" />
               <h1 className="text-2xl font-medium">Welcome to Xeat!</h1>
               <p className="text-xeat-grey">
-                Hey, we’re happy to have you here! <br /> In order to create your accounts fill in the fields.
+                Hey, we’re happy to have you here! <br /> Save your ticket as a Dynamic NFT Collections.
               </p>
             </div>
           </div>

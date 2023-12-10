@@ -89,12 +89,12 @@ function EventsPage() {
           <div className="flex w-full flex-col items-center justify-center gap-5 rounded-xl bg-xeat-dark-grey px-5 py-3 uppercase md:flex-row md:gap-20">
             <div className="flex flex-col items-center">
               <span className="text-xs">All Events</span>
-              <span className="text-xl font-medium">226</span>
+              <span className="text-xl font-medium">4</span>
             </div>
             <div className="hidden h-7 w-[1px] bg-xeat-grey md:block"></div>
             <div className="flex flex-col items-center">
               <span className="text-xs">Participants in All</span>
-              <span className="text-xl font-medium">17,905</span>
+              <span className="text-xl font-medium">335</span>
             </div>
           </div>
           <div className="flex items-center justify-between border-b-1.5 border-xeat-dark-grey py-5">

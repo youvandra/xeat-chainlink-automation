@@ -76,7 +76,7 @@ export default function EventDetailModal({
                       <h1 className="text-xl font-bold">{data?.name}</h1>
                       <div className="flex gap-5">
                         <span className="rounded bg-xeat-green px-7 font-bold">0/{Number(data?.maxSupply)}</span>
-                        <div className="rounded font-bold">{Number(data?.pricePerNFT) / 1e18} ETH</div>
+                        <div className="rounded font-bold">{Number(data?.pricePerNFT) / 1e18} MATIC</div>
                       </div>
                     </div>
                   </div>
@@ -92,7 +92,7 @@ export default function EventDetailModal({
                     </div>
                     <div className="flex flex-col items-center pl-5">
                       <h2 className="font-medium">Rarity NFT Chance</h2>
-                      <p className="text-sm text-xeat-grey">Epic, Legendary</p>
+                      <p className="text-sm text-xeat-grey">Epic</p>
                     </div>
                   </div>
 
