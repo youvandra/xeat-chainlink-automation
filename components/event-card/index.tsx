@@ -28,7 +28,10 @@ function EventCard({ href, data, ...props }: IEventCard) {
           <FilterChip filter={data.featured ? "featured" : "live"} />
         </div>
         <div className="flex items-center justify-between gap-2">
-          <span className="font-medium">{data.name}</span>
+        <span className="font-medium">
+          {data.name.length > 15 ? `${data.name.substring(0, 10)}...` : data.name}
+        </span>
+
           <div className="rounded-full border border-xeat-grey px-8 py-1 text-xs font-bold text-xeat-grey">Concert</div>
         </div>
 
